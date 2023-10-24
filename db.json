@@ -1,0 +1,53 @@
+{
+  "customer": [
+    {
+      "code": "1",
+      "name": "Kasule JamalLukenge",
+      "phone": "0753073101",
+      "email": "jamalkasule123@gmail.com",
+      "status": "Active"
+    },
+    {
+      "code": "2",
+      "name": "Nantongo Rahma",
+      "phone": "0771851857",
+      "email": "rahmalutale@gmail.com",
+      "status": "Inactive"
+    },
+    {
+      "code": "3",
+      "name": "Lutalo Ishaq",
+      "phone": "0704408118",
+      "email": "lutaloisaac@gmail.com",
+      "status": "Active"
+    },
+    {
+      "code": "4",
+      "name": "Naiga Shamira",
+      "phone": "0779019143",
+      "email": "shamiranaiga2@gmail.com",
+      "status": "Active"
+    },
+    {
+      "code": "5",
+      "name": "Hernie",
+      "phone": "0788029350",
+      "email": "hernie@gmail.com",
+      "status": "Active"
+    },
+    {
+      "code": "6",
+      "name": "Senkumba Nelson",
+      "phone": "0753073101",
+      "email": "jamalkasule123@gmail.com",
+      "status": "Inctive"
+    },
+    {
+      "code": "7",
+      "name": "Biira Samuel",
+      "phone": "0753073101",
+      "email": "jamalkasule123@gmail.com",
+      "status": "Active"
+    }
+  ]
+}
