@@ -34,7 +34,11 @@ import {MatRadioModule} from '@angular/material/radio';
 import { FormdesignComponent } from './formdesign/formdesign.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TeacherComponent } from './teacher/teacher.component';
+import { SubjectComponent } from './subject/subject.component';
+import { LessonComponent } from './lesson/lesson.component';
+import { TimeslotComponent } from './timeslot/timeslot.component';
+import { StreamComponent } from './stream/stream.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +51,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardComponent,
     LoginComponent,
     PopupComponent,
-    FormdesignComponent
+    FormdesignComponent,
+    TeacherComponent,
+    SubjectComponent,
+    LessonComponent,
+    TimeslotComponent,
+    StreamComponent
   ],
   imports: [
     BrowserModule,

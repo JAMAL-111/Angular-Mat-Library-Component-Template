@@ -43,7 +43,7 @@ export class PopupComponent implements OnInit {
     status:this.builder.control('true'),
   })
 
-  Saveuser(){
+  SaveTeacher(){
     //console.log(this.myform.value);
     this.service.Savecustomer(this.myform.value).subscribe(res=>{
       this.closepopup();
