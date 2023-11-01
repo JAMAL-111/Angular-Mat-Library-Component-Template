@@ -12,11 +12,47 @@ export class TeacherService {
   constructor(private http:HttpClient) { 
 
   }
-  GetTeacher():Observable<Teacher[]>{
-    return this.http.get<Teacher[]>("http://localhost:3000/teacher");
+
+  // GetSubject():Observable<Subject[]>{
+  //   return this.http.get<Subject[]>("http://localhost:3000/subjects");
+  // }
+
+  GetTeacher(){
+     return this.http.post<{status:String,data:Teacher[]}>("http://localhost:8080/api/v1/",
+    {
+      action: 'all-teacher',
+    }
+    );
+    // obsr.subscribe(
+    //   value=> console.log(value)
+      
+    // )
+    // return obsr;
   }
 
-  Saveteacher(data:any){
-    return this.http.post("http://localhost:3000",data);
+  // getAllTeachers():{
+  //   return this.http.post<ApiResponse<Teacher[]>>(BASEURL,
+  //     {
+  //       "action": "all-teacher"
+  //     },
+  //     {headers:this.header});
+  // }
+
+  SaveTeacher(Teacher:any){
+    return this.http.post("http://localhost:8080/api/v1",
+    {
+      action: 'add-teacher',
+      data:Teacher
+    });
+  }
+  // Saveteacher(data:any){
+  //   return this.http.post<Teacher>(BASEURL,{
+  //     "action": "add-teacher",
+  //     "data": data
+  //   })
+  // }
+
+  GetTeacherByID(code:any){
+    return this.http.get("http://localhost:3000/customer"+code);
   }
 }

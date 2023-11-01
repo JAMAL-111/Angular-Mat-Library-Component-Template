@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MasterService } from '../service/master.service';
+import { TeacherService } from '../service/teacher.service';
 
 @Component({
   selector: 'app-popup',
@@ -13,7 +13,7 @@ export class PopupComponent implements OnInit {
   editdata:any;
   closemessage='Closed willingly' //component binding
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private ref:MatDialogRef<PopupComponent>, private builder:FormBuilder,
-  private service:MasterService){
+  private service:TeacherService){
 
   }
 
@@ -25,9 +25,18 @@ export class PopupComponent implements OnInit {
   }
 
   setpopupdata(code:any){
-    this.service.GetCustomerbycode(code).subscribe(item=>{
+    this.service.GetTeacherByID(code).subscribe(item=>{
     this.editdata=item;
-    this.myform.setValue({name:this.editdata.name,email:this.editdata.email,phone:this.editdata.phone,status:this.editdata.status})
+    this.myform.setValue({
+      email: this.editdata.email,
+      firstName: this.editdata.firstName,
+      middleName: this.editdata.middleName,
+      lastName: this.editdata.lastName,
+      phoneNumber: this.editdata.phoneNumber,
+      dateOfBirth: this.editdata.dateOfBirth,
+      gender: this.editdata.gender,
+      status: this.editdata.status
+    })
     });
   }
   
@@ -37,15 +46,19 @@ export class PopupComponent implements OnInit {
   }
 
   myform=this.builder.group({
-    name:this.builder.control(''),
+    firstName:this.builder.control(''),
+    middleName: this.builder.control(''),
+    lastName: this.builder.control(''),
     email:this.builder.control(''),
-    phone:this.builder.control(''),
+    phoneNumber:this.builder.control(''),
+    dateOfBirth: this.builder.control(''),
+    gender: this.builder.control(''),
     status:this.builder.control('true'),
   })
 
   SaveTeacher(){
     //console.log(this.myform.value);
-    this.service.Savecustomer(this.myform.value).subscribe(res=>{
+    this.service.SaveTeacher(this.myform.value).subscribe(res=>{
       this.closepopup();
     });
   }

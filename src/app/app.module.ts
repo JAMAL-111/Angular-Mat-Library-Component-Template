@@ -39,6 +39,9 @@ import { SubjectComponent } from './subject/subject.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { TimeslotComponent } from './timeslot/timeslot.component';
 import { StreamComponent } from './stream/stream.component';
+import { StreampopupComponent } from './streampopup/streampopup.component';
+import { TimeslotpopupComponent } from './timeslotpopup/timeslotpopup.component';
+import { SubjectpopupComponent } from './subjectpopup/subjectpopup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,10 @@ import { StreamComponent } from './stream/stream.component';
     SubjectComponent,
     LessonComponent,
     TimeslotComponent,
-    StreamComponent
+    StreamComponent,
+    StreampopupComponent,
+    TimeslotpopupComponent,
+    SubjectpopupComponent
   ],
   imports: [
     BrowserModule,

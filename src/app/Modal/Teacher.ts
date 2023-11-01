@@ -5,5 +5,5 @@ export interface Teacher{
     lastName: string,
     gender: string,
     phoneNumber: string,
-    doB: string,
+    dateOfBirth: string,
 }

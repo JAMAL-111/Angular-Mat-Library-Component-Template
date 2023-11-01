@@ -15,7 +15,7 @@ import { PopupComponent } from '../popup/popup.component';
 export class TeacherComponent {
   teacherlist !: Teacher[];
   dataSource: any;
-  displayedColumns:string[]=["id","firstName","middleName","lastName","phoneNumber","doB","gender","action"];
+  displayedColumns:string[]=["id","firstName","middleName","lastName","phoneNumber","dateOfBirth","gender","action"];
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
@@ -26,8 +26,8 @@ export class TeacherComponent {
   //rereshing tables
   loadteacher(){
     this.service.GetTeacher().subscribe(res =>{
-      console.log(res);
-      this.teacherlist = res;
+      console.log(res.data);
+      this.teacherlist = res.data;
       this.dataSource = new MatTableDataSource<Teacher>(this.teacherlist);
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort;
