@@ -18,7 +18,7 @@ export class TeacherService {
   // }
 
   GetTeacher(){
-     return this.http.post<{status:String,data:Teacher[]}>("http://localhost:8080/api/v1/",
+     return this.http.post<{status:String,data:Teacher[]}>("http://localhost:8081/api/v1/",
     {
       action: 'all-teacher',
     }
@@ -39,7 +39,7 @@ export class TeacherService {
   // }
 
   SaveTeacher(Teacher:any){
-    return this.http.post("http://localhost:8080/api/v1",
+    return this.http.post("http://localhost:8081/api/v1/",
     {
       action: 'add-teacher',
       data:Teacher

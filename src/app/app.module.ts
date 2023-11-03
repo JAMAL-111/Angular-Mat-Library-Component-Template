@@ -42,6 +42,8 @@ import { StreamComponent } from './stream/stream.component';
 import { StreampopupComponent } from './streampopup/streampopup.component';
 import { TimeslotpopupComponent } from './timeslotpopup/timeslotpopup.component';
 import { SubjectpopupComponent } from './subjectpopup/subjectpopup.component';
+import { DatePipe } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,7 @@ import { SubjectpopupComponent } from './subjectpopup/subjectpopup.component';
     StreamComponent,
     StreampopupComponent,
     TimeslotpopupComponent,
-    SubjectpopupComponent
+    SubjectpopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import { SubjectpopupComponent } from './subjectpopup/subjectpopup.component';
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DatePipe
   ],
   providers: [
     HttpClient
